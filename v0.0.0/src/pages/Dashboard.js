@@ -13,7 +13,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import TableSortLabel from "@material-ui/core/TableSortLabel";
 
-const API_KEY = "";
+const API_KEY = "O6Po4sga6fFN4R9KMiEBrdER7mjiefXWxRxmQiPR";
 let baseUrl =
   "https://api.fda.gov/device/covid19serology.json?api_key=" + API_KEY;
 // const url = "https://api.fda.gov/device/covid19serology.json?limit=100";
@@ -23,8 +23,6 @@ export default function Dashboard() {
   const [data, setData] = useState("");
   const [search, setSearch] = useState("");
   const [num, setNum] = useState(100);
-  console.log(num);
-  console.log(baseUrl + "?limit=" + num);
 
   let url = "";
   if (search === "") {
@@ -32,17 +30,20 @@ export default function Dashboard() {
   } else {
     url = baseUrl + "&search=sample_id:" + search + "&limit=1";
   }
-  console.log(url);
 
   useEffect(() => {
     async function getColumnsAsync() {
-      let response = await fetch(url);
-      const getResponse = await response.json();
-      setColumns(getResponse.results[0]);
-      setData(getResponse.results);
+      try {
+        let response = await fetch(url);
+        const getResponse = await response.json();
+        setColumns(getResponse.results[0]);
+        setData(getResponse.results);
+      } catch (err) {
+        console.log(err);
+      }
     }
     getColumnsAsync();
-  });
+  }, [search]);
 
   let cols = Object.keys(columns);
 
@@ -83,7 +84,7 @@ export default function Dashboard() {
   };
 
   const handleClick = e => {
-    setNum(prev => (prev < 10000 ? prev + 100 : prev));
+    setNum(prev => prev + 100);
   };
 
   return (
