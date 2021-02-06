@@ -58,7 +58,7 @@
 ### installation
 
 1. Run `npm i`
-2. Add your API_KEY in `../../Dashboard`file line 17 (mandantory)
+2. Add your API_KEY in `./src/pages/Dashboard`file line 17 (mandantory)
    [get api credential](https://open.fda.gov/apis/authentication/)
 3. Add your credential info at Login.js and Logout.js(optional)
    [get google credential](https://console.developers.google.com/apis/credentials?pli=1)
