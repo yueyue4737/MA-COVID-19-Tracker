@@ -1,5 +1,5 @@
 import "../styles.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -12,13 +12,15 @@ import Button from "@material-ui/core/Button";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import TableSortLabel from "@material-ui/core/TableSortLabel";
+// import jwt from "jsonwebtoken";
 
 const API_KEY = "O6Po4sga6fFN4R9KMiEBrdER7mjiefXWxRxmQiPR";
 let baseUrl =
   "https://api.fda.gov/device/covid19serology.json?api_key=" + API_KEY;
 // const url = "https://api.fda.gov/device/covid19serology.json?limit=100";
+// const KEY = "ddfdfsfsfsf";
 
-export default function Dashboard() {
+export default function Dashboard(req, res) {
   const [columns, setColumns] = useState("");
   const [data, setData] = useState("");
   const [search, setSearch] = useState("");
@@ -86,6 +88,23 @@ export default function Dashboard() {
   const handleClick = e => {
     setNum(prev => prev + 100);
   };
+
+  // if (!req.body) {
+  //   // res.statusCode = 404;
+  //   // res.end("Error");
+  //   return null;
+  // }
+
+  // const { username, password } = req.body;
+  // res.json(
+  //   {
+  //     token: jwt.sign({
+  //       username,
+  //       admin: username === "admin" && password === "admin"
+  //     })
+  //   },
+  //   KEY
+  // );
 
   return (
     <div className="App">

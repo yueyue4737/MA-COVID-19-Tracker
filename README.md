@@ -53,7 +53,8 @@
 
 1. react-router-dom
 2. @material-ui/core
-3. react-google-login
+3. react-google-login & jsonwebtoken
+4. jest & react-testing-library
 
 ### installation
 
@@ -67,7 +68,7 @@
 
 1. Run `yarn test` to test the author
 
-## What's next? - new version at branch v1.0.0
+## The next sprint - new version at branch v1.0.0
 
 ### How to improve and support the backend by building a secure and efficiency node.js and Django server
 
