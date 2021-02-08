@@ -55,6 +55,7 @@
 2. @material-ui/core
 3. react-google-login & jsonwebtoken
 4. jest & react-testing-library
+5. express-generator
 
 ### installation
 
@@ -63,6 +64,7 @@
    [get api credential](https://open.fda.gov/apis/authentication/)
 3. Add your credential info at Login.js and Logout.js(optional)
    [get google credential](https://console.developers.google.com/apis/credentials?pli=1)
+4. To run the backend, `cd node-backend` then `npm start`
 
 ### testing
 
@@ -71,6 +73,8 @@
 ## The next sprint - new version at branch v1.0.0
 
 ### How to improve and support the backend by building a secure and efficiency node.js and Django server
+
+1. I assume that we are using a legacy version of node server by expree-generator, so I choose it as my starting point.
 
 ### How to refractor the code for by React-Saga in a large scale system?
 
